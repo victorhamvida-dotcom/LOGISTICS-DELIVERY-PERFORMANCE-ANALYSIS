@@ -72,7 +72,7 @@ display(
 - #### 1. [Executive Summary](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#1-executive-summary)
 
 - ### 2. [Business Problem](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#2-business-problem)  
-- #### 2.1 Business Objectives
+- #### 2.1 [Business Objectives](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#21-business-objectives)
 
 - ### 3. [Dataset Overview](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#3-dataset-overview)
 
