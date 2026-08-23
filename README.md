@@ -81,26 +81,26 @@ display(
 - ### 5. [Feature Engineering](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#5-feature-engineering)
 
 - ### 6. [Exploratory and Correlation Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#6-exploratory-and-correlation-analysis)
-- #### 6.1 Distance and Delivery Time
-- #### 6.2 Distance and Delivery Cost
-- #### 6.3 Delay and Customer Rating
+- #### 6.1 [Distance and Delivery Time](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#61-distance-and-delivery-time)
+- #### 6.2 [Distance and Delivery Cost](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#62-distance-and-delivery-cost)
+- #### 6.3 [Delay and Customer Rating](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#63-delay-and-customer-rating)
 
 - ### 7. [Route Performance Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#7-route-performance-analysis) 
-- #### 7.1 Routes with the Highest Delay Rates
-- #### 7.2 Slowest Routes
-- #### 7.3 Most Expensive Routes
+- #### 7.1 [Routes with the Highest Delay Rates](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#71-routes-with-the-highest-delay-rates)
+- #### 7.2 [Slowest Routes](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#72-slowest-routes)
+- #### 7.3 [Most Expensive Routes](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#73-most-expensive-routes)
 
 - ### 8. [Operational KPI Dashboard](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#8-operational-kpi-dashboard)
 
 - ### 9. [Customer Satisfaction Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#9-customer-satisfaction-analysis) 
-- #### 9.1 Customer Rating by Delay Status
-- #### 9.2 Customer Rating by Vehicle Type
-- #### 9.3 Weather and Delivery Performance
-- #### 9.4 Traffic Conditions
+- #### 9.1 [Customer Rating by Delay Status](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#91-customer-rating-by-delay-status)
+- #### 9.2 [Customer Rating by Vehicle Type](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#92-customer-rating-by-vehicle-type)
+- #### 9.3 [Weather and Delivery Performance](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#93-weather-and-delivery-performance)
+- #### 9.4 [Traffic Conditions](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#94-traffic-conditions)
 
 - ### 10. [Time-Based Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#10-time-based-analysis)
-- #### 10.1 Monthly Delivery Volume
-- #### 10.2 Monthly Delay Rate
+- #### 10.1 [Monthly Delivery Volume](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#101-monthly-delivery-volume)
+- #### 10.2 [Monthly Delay Rate](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#102-monthly-delay-rate)
 
 - ### 11. [Key Business Insights](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#11-key-business-insights)
 
