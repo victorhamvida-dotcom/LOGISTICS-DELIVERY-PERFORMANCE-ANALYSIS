@@ -3,6 +3,116 @@
 A Python-Based Data Cleaning, Feature Engineering and Business Analytics Project 
 - Tools: Python, Pandas, NumPy, Matplotlib, Seaborn & VS Code  
                        **Portfolio Project Report**
+```
+#LOGISTICS
+from pickle import FALSE
+from re import A
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime, timedelta
+import seaborn as sns
+from email._header_value_parser import RouteComponentMarker
+from IPython.display import display
+df = pd.read_csv(r"C:\Users\HP\Desktop\PROJECT  WORKS\PYTHON\LOGISTICS ANALYIS WITH PYTHON\logistics_dirty_dataset.csv")
+print(df)
+#Tring to understand my data and what to fix and clean in the data set
+print(df.head())
+print(df.shape)
+print(df.info())
+print(df.describe(include='all'))
+```
+```
+#Section 9: Business Insights
+from IPython.display import display
+
+print("===== OVERALL KPIs =====")
+display(operational_kpis)
+
+print("\n===== TOP ROUTES BY DELAY RATE =====")
+display(most_delayed_routes.head(5))
+
+print("\n===== TOP SLOWEST ROUTE =====")
+display(slowest_route.head(5))
+
+print("\n===== TOP EXPENSIVE ROUTE =====")
+display(most_expensive_routes.head(5))
+
+print("\n===== CUSTOMER RATING BY DELAY =====")
+display(rating_by_vehicle.sort_values(
+    'average_rating',
+    ascending=False
+))
+
+print("\n===== MONTHLY ORDERS =====")
+display(monthly_orders)
+
+print("\n===== MONTHLY DELAY RATE =====")
+display(monthly_delays)
+
+
+#fixing customer rating 
+rating_by_delay = df.groupby('is_delayed').agg(
+    average_rating=('customer_rating', 'mean'),
+    number_of_deliveries=('order_id','count')
+).reset_index()
+
+rating_by_delay['delay_status'] = rating_by_delay['is_delayed'].map({
+    0: 'Not Delayed',
+    1: 'Delayed'
+})
+display(
+    rating_by_delay[
+        ['delay_status', 'average_rating', 'number_of_deliveries']
+    ]
+)
+```
+- ### Table of Contents
+- #### 1. Executive Summary
+
+- ### Business Problem  
+- #### 2.1 Business Objectives
+
+- ### Dataset Overview
+
+- ### Data Cleaning
+
+- ### Feature Engineering
+
+- ### Exploratory and Correlation Analysis  
+- #### 6.1 Distance and Delivery Time
+- #### 6.2 Distance and Delivery Cost
+- #### 6.3 Delay and Customer Rating
+
+- ### Route Performance Analysis  
+- #### 7.1 Routes with the Highest Delay Rates
+- #### 7.2 Slowest Routes
+- #### 7.3 Most Expensive Routes
+
+- ### Operational KPI Dashboard
+
+- ### Customer Satisfaction Analysis  
+- #### 9.1 Customer Rating by Delay Status
+- #### 9.2 Customer Rating by Vehicle Type
+- #### 9.3 Weather and Delivery Performance
+- #### 9.4 Traffic Conditions
+
+- ### Time-Based Analysis  
+- #### 10.1 Monthly Delivery Volume
+- #### 10.2 Monthly Delay Rate
+
+- ### Key Business Insights
+
+- ### Business Recommendations
+
+- ### Conclusion
+
+- ### Technical Skills Demonstrated
+
+- ### Project Outcome
+
+- ### Appendix A: Core Analytical Questions
 
 ## 1. Executive Summary
 This project analyzes logistics delivery records to evaluate delivery performance, operational efficiency, route performance, delivery costs, customer satisfaction, and demand patterns.
@@ -51,16 +161,17 @@ The dataset was designed to represent a realistic logistics environment and cont
 
 The project began with a deliberately dirty logistics dataset containing inconsistent values, missing data and duplicate order identifiers. The data covered delivery orders involving five cities and multiple vehicle, traffic and weather categories.
 
-Dataset Metric	Result
-Records after cleaning	7,385
-Unique order IDs	7,383
-Original variables	16
-Final variables after feature engineering	39 during analysis
-Origin/destination cities	5 cities
-Vehicle types	3 (Bike, Truck, Van)
-Weather categories	3 (Clear, Rain, Storm)
-Traffic categories	3 (Low, Medium, High)
-Main Analysis Areas	Delivery performance, routes, cost, delays and customer satisfaction
+| Dataset                                   | Metric/Result                                      |
+|-------------------------------------------|----------------------------------------------------|
+| Records after cleaning                     | 7,385                                              |
+| Unique order IDs                           | 7,383                                              |
+| Original variables                         | 16                                                 |
+| Final variables after feature engineering  | 39 during analysis                                 |
+| Origin/destination cities                  | 5 cities                                           |
+| Vehicle types                              | 3 (Bike, Truck, Van)                               |
+| Weather categories                         | 3 (Clear, Rain, Storm)                             |
+| Traffic categories                         | 3 (Low, Medium, High)                              |
+| Main Analysis Areas                        | Delivery performance, routes, cost, delays, customer satisfaction |
 
 The distinction between total records and unique order IDs was retained during the analysis to ensure that the dataset structure was accurately documented. This distinction is documented rather than silently treating the two measures as identical.
 
@@ -88,21 +199,22 @@ Feature engineering was performed to transform the raw logistics data into varia
 
 Several new features were created to support operational, route, cost, customer satisfaction, and time-based analysis.
 
-Feature	Purpose	Business Use
-Actual delivery time	Measures elapsed time between order and delivery.	Monitor delivery speed.
-Delay hours	Quantifies the amount of delay.	Measure delivery reliability.
-Route	Combines origin and destination.	Compare route performance.
-Cost per KM	Normalizes cost by distance.	Compare cost efficiency.
-Delivery speed	Distance divided by delivery time.	Assess operational efficiency.
-Same-city delivery	Flags deliveries where origin equals destination.	Compare local vs inter-city operations.
-Month / weekday / weekend	Extracts calendar patterns.	Support capacity planning.
-Distance category	Groups deliveries by distance.	Compare short, medium and long trips.
-Daily order volume / peak day	Measures daily demand pressure.	Support staffing and capacity planning.
-Is Delayed	Identifies whether a delivery was delayed	Spot delays that can affect the business
-Order Month	Supports monthly demand analysis	Business monthly growth from analysis 
-Weekday	Supports weekday demand analysis	Business weekly growth from analysis
-Weekend/Weekday	Enables comparison of weekend and weekday operations	Business managers can see weekday and weekend outcomes and plan towards where is lacking and replicate where is improving
-Distance Category	Groups deliveries according to distance	Show deliveries with related distance  compare and know which is more profitable or not 
+| Feature                     | Purpose                                           | Business Use                                                                 |
+|------------------------------|---------------------------------------------------|-------------------------------------------------------------------------------|
+| Actual delivery time         | Measures elapsed time between order and delivery. | Monitor delivery speed.                                                       |
+| Delay hours                  | Quantifies the amount of delay.                   | Measure delivery reliability.                                                 |
+| Route                        | Combines origin and destination.                  | Compare route performance.                                                    |
+| Cost per KM                  | Normalizes cost by distance.                      | Compare cost efficiency.                                                      |
+| Delivery speed               | Distance divided by delivery time.                | Assess operational efficiency.                                                |
+| Same-city delivery           | Flags deliveries where origin equals destination. | Compare local vs inter-city operations.                                       |
+| Month / weekday / weekend    | Extracts calendar patterns.                       | Support capacity planning.                                                    |
+| Distance category            | Groups deliveries by distance.                    | Compare short, medium, and long trips; assess profitability.                  |
+| Daily order volume / peak day| Measures daily demand pressure.                   | Support staffing and capacity planning.                                       |
+| Is Delayed                   | Identifies whether a delivery was delayed.        | Spot delays that can affect the business.                                     |
+| Order Month                  | Supports monthly demand analysis.                 | Track business growth month by month.                                         |
+| Weekday                      | Supports weekday demand analysis.                 | Track business growth week by week.                                           |
+| Weekend/Weekday              | Enables comparison of weekend and weekday ops.    | Managers can plan improvements based on outcomes.                             |
+
 
 These engineered variables allowed the analysis to move beyond the original raw fields and answer more practical business questions.
 
@@ -113,19 +225,21 @@ The analysis focused particularly on the relationships between distance, deliver
 
 Correlation analysis showed that distance was strongly associated with delivery time and delivery cost. This is operationally intuitive: longer shipments generally require more time and incur greater cost.
 
+![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/correlation%20matric%20of%20logistics%20variables%202.png)
+
+
 
 
  
-Figure 1. Selected correlations from the completed analysis
- 
+Figure 1. Selected correlations heat map from  the completed analysis.
 
-Figure 2. Selected correlations heat map from  the completed analysis.
+| Relationship                 | Correlation |
+|-------------------------------|-------------|
+| Distance vs Delivery Time     | 0.817       |
+| Distance vs Delivery Cost     | 0.732       |
+| Delivery Time vs Cost         | 0.649       |
+| Delay vs Customer Rating      | 0.002       |
 
-Relationship	Correlation
-Distance vs Delivery Time	0.817
-Distance vs Delivery Cost	0.732
-Delivery Time vs Cost	0.649
-Delay vs Customer Rating	0.002
 
 The relationship between delay status and customer rating was effectively zero (r = 0.0019). Therefore, the analysis does not support the assumption that delayed deliveries alone explain lower ratings.
 
@@ -152,10 +266,10 @@ Route analysis focused on three operational questions: which routes experience t
 
 ### 7.1 Routes with the Highest Delay Rates
  
-Figure 3. Ten routes with the highest delay rates.
-
+Figure 2. Ten routes with the highest delay rates.
+![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/top%2010%20route%20by%20delay%20rate.png)
  
-Figure 4. Five routes with the highest delay rates.
+
 
 Lagos to Lagos recorded the highest route-level delay rate at **71.43%**, followed by Ibadan to Port Harcourt at **70.42%**.
 
@@ -167,10 +281,10 @@ Management could examine dispatch scheduling, route planning, traffic conditions
 
 ### 7.2 Slowest Routes
  
-Figure 5. Ten slowest routes by average delivery time.
-
+Figure 3. Ten slowest routes by average delivery time.
+![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/top%2010%20slowest%20delivery%20route.png)
  
-Figure 6. Five slowest routes by average delivery time.
+
 
 Ibadan to Lagos recorded the highest average delivery time among the routes examined, at approximately **7.24 hours**.
 
@@ -180,9 +294,9 @@ The performance of these routes should be investigated to determine whether rout
 
 ### 7.3 Most Expensive Routes
  
-Figure 7. Ten most expensive routes by average delivery cost.
- 
-Figure 8. Five most expensive routes by average delivery cost.
+Figure 4. Ten most expensive routes by average delivery cost.
+ ![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/top%2010%20most%20expensive%20delivery%20route.png)
+
 
 Abuja to Ibadan recorded the highest average delivery cost at approximately **386.75**.
 
@@ -191,14 +305,16 @@ Other high-cost routes included Lagos to Kano, Lagos to Lagos, Kano to Ibadan, a
 These routes may provide opportunities for cost optimization. Management should investigate factors such as distance, vehicle allocation, route efficiency, and other operational costs associated with these deliveries.
 
 ## 8. Operational KPI Dashboard
-KPI	Value	Unit
-Average Delivery Time	36.60	Hours
-Average Delivery Cost	359.08	Currency
-Delay Rate	66.49	%
-Average Customer Rating	3.75	Rating / 5
-Average Cost per KM	1.62	Currency / KM
-Average Delivery Speed	16.20	KM / Hour
-Total Delivery Records	7,385	Records
+| KPI                     | Value  | Unit          |
+|--------------------------|--------|---------------|
+| Average Delivery Time    | 36.60  | Hours         |
+| Average Delivery Cost    | 359.08 | Currency      |
+| Delay Rate               | 66.49  | %             |
+| Average Customer Rating  | 3.75   | Rating / 5    |
+| Average Cost per KM      | 1.62   | Currency / KM |
+| Average Delivery Speed   | 16.20  | KM / Hour     |
+| Total Delivery Records   | 7,385  | Records       |
+
 
 The most significant KPI finding was the **66.49%** overall delay rate.
 
@@ -215,20 +331,27 @@ Customer satisfaction was analyzed using customer ratings across different opera
 
 The analysis focused on delay status, vehicle type, traffic conditions, and weather conditions.
 
- 
-Figure 9. Vehicle-level delivery performance.
+
 
 ### 9.1 Customer Rating by Delay Status
 
 The analysis produced the following results:
 
-Delivery Status	Average Rating	Number of Deliveries
-Not Delayed	3.7467	2,475
-Delayed	3.7464	4,910
+| Delivery Status | Average Rating | Number of Deliveries |
+|-----------------|----------------|----------------------|
+| Not Delayed     | 3.7467         | 2,475                |
+| Delayed         | 3.7464         | 4,910                |
 
 
- 
-Figure 10. Delay rate by delay status.
+
+
+
+  ![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/delayed%20deliveries%20distribution.png)
+
+
+
+  
+Figure 5. Delay rate by delay status.
 
 Customer ratings were almost identical between delayed and non-delayed deliveries.
 
@@ -245,11 +368,13 @@ Therefore, further investigation would be required to determine which other fact
  
 
 
-Figure 11. Average Delay rate by vehicle type.
+  ![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/average%20customer%20rating%20by%20vehicle%20type.png)
+Figure 6. Average Delay rate by vehicle type.
 
+  ![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/customer%20rating%20by%20vehicle%20type.png)
  
 
-Figure 12. Delay rate by vehicle type.
+Figure 7. Delay rate by vehicle type.
 
 
 Average customer ratings were very similar across vehicle types.
@@ -263,8 +388,8 @@ Vehicle selection should therefore focus on operational efficiency, delivery dis
 
 ### 9.3 Weather and Delivery Performance
  
-
-Figure 13. Delay rate by weather condition.
+![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/delay%20rate%20by%20weather%20condition.png)
+Figure 8. Delay rate by weather condition.
 
 Weather conditions showed some variation in delivery performance.
 
@@ -277,8 +402,8 @@ This suggests that adverse weather conditions may be associated with poorer deli
 ### 9.4 Traffic conditions
 
 
- 
-Figure 14. Delay rate by traffic conditions.
+ ![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/delay%20rate%20by%20traffic%20level.png)
+Figure 9. Delay rate by traffic conditions.
 
 
 ## 10. Time-Based Analysis
@@ -287,11 +412,11 @@ Time-based analysis was conducted to identify patterns in delivery demand and de
 ### 10.1 Monthly Delivery Volume
 
  
-Figure 15. Monthly delivery volume.
+Figure 10. Monthly delivery volume.
 
-
+![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/monthly%20delivery%20demand.png)
  
-Figure 16. Monthly delivery volume.
+
 
 
 Delivery demand varied across the year.
@@ -303,12 +428,12 @@ Understanding these demand patterns can help logistics management plan driver av
 
 ### 10.2 Monthly Delay Rate
  
-Figure 17. Monthly delay rate compared with the overall delay rate.
-
+Figure 11. Monthly delay rate compared with the overall delay rate.
+![](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS/blob/main/monthly%20delivery%20delay%20rate.png)
  
 
 
-Figure 18. Monthly delay rate compared with the overall delay rate.
+
 
 
 Monthly delay rates also varied throughout the year.
