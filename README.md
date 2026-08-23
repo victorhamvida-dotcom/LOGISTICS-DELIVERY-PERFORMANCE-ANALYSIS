@@ -69,50 +69,50 @@ display(
 )
 ```
 - ### Table of Contents
-- #### 1. Executive Summary
+- #### 1. [Executive Summary](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#1-executive-summary)
 
-- ### Business Problem  
+- ### 2. [Business Problem](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#2-business-problem)  
 - #### 2.1 Business Objectives
 
-- ### Dataset Overview
+- ### 3. [Dataset Overview](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#3-dataset-overview)
 
-- ### Data Cleaning
+- ### 4. [Data Cleaning](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#4-data-cleaning)
 
-- ### Feature Engineering
+- ### 5. [Feature Engineering](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#5-feature-engineering)
 
-- ### Exploratory and Correlation Analysis  
+- ### 6. [Exploratory and Correlation Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#6-exploratory-and-correlation-analysis)
 - #### 6.1 Distance and Delivery Time
 - #### 6.2 Distance and Delivery Cost
 - #### 6.3 Delay and Customer Rating
 
-- ### Route Performance Analysis  
+- ### 7. [Route Performance Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#7-route-performance-analysis) 
 - #### 7.1 Routes with the Highest Delay Rates
 - #### 7.2 Slowest Routes
 - #### 7.3 Most Expensive Routes
 
-- ### Operational KPI Dashboard
+- ### 8. [Operational KPI Dashboard](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#8-operational-kpi-dashboard)
 
-- ### Customer Satisfaction Analysis  
+- ### 9. [Customer Satisfaction Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#9-customer-satisfaction-analysis) 
 - #### 9.1 Customer Rating by Delay Status
 - #### 9.2 Customer Rating by Vehicle Type
 - #### 9.3 Weather and Delivery Performance
 - #### 9.4 Traffic Conditions
 
-- ### Time-Based Analysis  
+- ### 10. [Time-Based Analysis](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#10-time-based-analysis)
 - #### 10.1 Monthly Delivery Volume
 - #### 10.2 Monthly Delay Rate
 
-- ### Key Business Insights
+- ### 11. [Key Business Insights](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#11-key-business-insights)
 
-- ### Business Recommendations
+- ### 12. [Business Recommendations](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#12-business-recommendations)
 
-- ### Conclusion
+- ### 13. [Conclusion](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#13-conclusion)
 
-- ### Technical Skills Demonstrated
+- ### 14. [Technical Skills Demonstrated](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#14-technical-skills-demonstrated)
 
-- ### Project Outcome
+- ### 15. [Project Outcome](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#15-project-outcome)
 
-- ### Appendix A: Core Analytical Questions
+- ### 16. [Appendix A: Core Analytical Questions](https://github.com/victorhamvida-dotcom/LOGISTICS-DELIVERY-PERFORMANCE-ANALYSIS#appendix-a-core-analytical-questions)
 
 ## 1. Executive Summary
 This project analyzes logistics delivery records to evaluate delivery performance, operational efficiency, route performance, delivery costs, customer satisfaction, and demand patterns.
